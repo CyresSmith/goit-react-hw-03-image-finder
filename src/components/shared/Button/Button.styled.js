@@ -6,6 +6,8 @@ export const StyledButton = styled('button')`
   font-family: ${theme.fonts.body};
   font-size: ${theme.fontSizes.m};
   font-weight: ${theme.fontWeights.regular};
+  margin-top: ${p => p.mt && theme.space[p.mt]};
+  margin-bottom: ${p => p.mb && theme.space[p.mb]};
   padding: ${theme.space[3]};
   color: ${theme.colors.secondary};
   background-color: ${p =>
@@ -27,4 +29,5 @@ export const StyledButton = styled('button')`
 
 export const ButtonText = styled.span`
   margin-left: ${p => (p.isIconThere ? theme.space[3] : theme.space[0])};
+  margin-right: ${p => (p.isIconThere ? theme.space[3] : theme.space[0])};
 `;

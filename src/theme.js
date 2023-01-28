@@ -52,7 +52,7 @@ const theme = {
   },
 
   sizes: {
-    container: '1200px',
+    container: '1216px',
   },
 
   shadow: {

@@ -2,26 +2,41 @@ import { PropTypes } from 'prop-types';
 import { StyledButton, ButtonText } from './Button.styled';
 
 const Button = ({
-  icon: Icon = null,
+  starticon: StartIcon = null,
+  endicon: EndIcon = null,
+  iconSize,
+  mt = null,
+  mb = null,
   type = 'button',
   disabled = false,
   children,
-  iconSize,
+  onClick,
 }) => {
   return (
-    <StyledButton type={type} disabled={disabled}>
-      {Icon && <Icon size={iconSize} />}
-      <ButtonText isIconThere={Icon}>{children}</ButtonText>
+    <StyledButton
+      type={type}
+      disabled={disabled}
+      mt={mt}
+      mb={mb}
+      onClick={onClick}
+    >
+      {StartIcon && <StartIcon size={iconSize} />}
+      <ButtonText isIconThere={StartIcon || EndIcon}>{children}</ButtonText>
+      {EndIcon && <EndIcon size={iconSize} />}
     </StyledButton>
   );
 };
 
 Button.propTypes = {
-  icon: PropTypes.func,
+  starticon: PropTypes.func,
+  endicon: PropTypes.func,
+  mt: PropTypes.number,
+  mb: PropTypes.number,
   type: PropTypes.string,
   disabled: PropTypes.bool,
   children: PropTypes.string.isRequired,
   iconSize: PropTypes.number,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Button;
