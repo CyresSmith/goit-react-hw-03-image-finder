@@ -3,7 +3,7 @@ import theme from 'theme';
 
 const StyledButton = styled('button')`
   display: inline-flex;
-  padding: ${theme.space[2]};
+  padding: ${theme.space[3]};
   color: ${theme.colors.secondary};
   background-color: ${p =>
     p.disabled ? theme.colors.muted : theme.colors.accent};

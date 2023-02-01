@@ -51,7 +51,7 @@ class Searchbar extends Component {
               className="searchButton"
               type="submit"
               icon={FaSearch}
-              iconSize={20}
+              iconSize={12}
               disabled={!isSubmitting && searchQuery.length > 0 ? false : true}
               ariaLable="search button"
               round={true}

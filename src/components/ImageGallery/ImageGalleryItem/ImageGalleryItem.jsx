@@ -16,7 +16,7 @@ const ImageGalleryItem = ({ onClick, item, setImg }) => {
     <PhotoCard
       onClick={() => {
         setImg({
-          img: largeImageURL,
+          imgUrl: largeImageURL,
           alt: tags,
         });
         onClick();

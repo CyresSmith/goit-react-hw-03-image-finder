@@ -15,7 +15,7 @@ export const ModalWindow = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-height: 500px;
+  min-height: 300px;
   max-width: 1000px;
   width: 100%;
   padding: ${theme.space[4]};

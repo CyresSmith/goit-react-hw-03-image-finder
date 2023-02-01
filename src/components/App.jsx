@@ -3,6 +3,7 @@ import { Report } from 'notiflix/build/notiflix-report-aio';
 import Searchbar from './Searchbar';
 import ImageGallery from './ImageGallery';
 import fetchImages from './shared/Services/fetchImages';
+import fetchImgForModal from './shared/Services/fetchImgForModal';
 import Section from './shared/Section';
 import Modal from './Modal';
 
@@ -49,6 +50,10 @@ class App extends Component {
     } catch (error) {
       this.setState({ error: error.message });
     }
+  };
+
+  fetchImgForModal = async imgUrl => {
+    fetchImgForModal(imgUrl);
   };
 
   toggleModal = () => {
@@ -110,7 +115,7 @@ class App extends Component {
         {showModal && (
           <Modal
             onClick={toggleModal}
-            children={<img src={modalImg.img} alt={modalImg.alt} />}
+            children={<img src={modalImg.imgUrl} alt={modalImg.alt} />}
           ></Modal>
         )}
         {error &&
